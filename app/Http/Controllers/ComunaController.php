@@ -58,17 +58,29 @@ class ComunaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comuna $comuna)
     {
-        //
+        $municipios = DB::table('tb_municipio')
+            ->orderBy('muni_nomb')
+            ->get();
+
+        return view('comuna.edit', compact('comuna'), compact('municipios'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comuna $comuna)
     {
-        //
+        $comuna->update($request->all());
+
+        $comunas = DB::table('tb_comuna')
+            ->join('tb_municipio', 'tb_comuna.muni_codi', '=', 'tb_municipio.muni_codi')
+            ->select('tb_comuna.*', 'tb_municipio.muni_nomb')
+            ->get();
+
+        return view('comuna.index', compact('comunas'));
+
     }
 
     /**

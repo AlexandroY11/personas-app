@@ -4,9 +4,10 @@
 
 @section('content')
 
-<h1>Add Commune</h1>
+<h1>Edit Commune {{$comuna->comu_nomb}}</h1>
 
-<form action="{{ route('comunas.store')}}" method="POST">
+<form action="{{ route('comunas.update', ['comuna' => $comuna->comu_codi]) }}" method="POST">
+    @method('put')
     @csrf
     <div class="mb-3">
         <label for="id" class="form-label">Code</label>
@@ -27,7 +28,7 @@
         </select>
     </div>
     <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Update</button>
         <a href="{{ route('comunas.index')}}" class="btn btn-warning">Cancel</a>
     </div>
 </form>

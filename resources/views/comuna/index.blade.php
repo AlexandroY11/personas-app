@@ -22,6 +22,7 @@
                 <td>{{ $comuna->comu_nomb }}</td>
                 <td>{{ $comuna->muni_nomb }}</td>
                 <td>
+                    <a href="{{ route('comunas.edit', ['comuna' => $comuna->comu_codi])}}" class="btn btn-warning">Edit</a>
                     <button type="button" class="btn btn-danger me-3" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $comuna->comu_codi }}">
                         Delete
                     </button>
