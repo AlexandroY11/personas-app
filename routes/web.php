@@ -12,4 +12,7 @@ Route::get('/', HomeController::class, 'index')->name('home');
 Route::resource('comunas', ComunaController::class);
 Route::resource('municipios', MunicipioController::class);
 Route::resource('departamentos', DepartamentoController::class);
-Route::resource('paises', PaisController::class);
+Route::resource('paises', PaisController::class)->parameters([
+    'paises' => 'pais'
+]);
+

@@ -74,8 +74,16 @@ class PaisController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $pais = Pais::find($id);
+        $pais->delete();
+
+        $paises = DB::table('tb_pais')
+            ->join('tb_municipio', 'tb_pais.pais_capi', '=', 'tb_municipio.muni_codi')
+            ->select('tb_pais.*', "tb_municipio.muni_nomb")
+            ->get();
+
+        return view('pais.index', compact('paises'));
     }
 }
