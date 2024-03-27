@@ -14,10 +14,10 @@
                     <a class="nav-link" href="{{route('comunas.index')}}">Communes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('comunas.index')}}">Municipalities</a>
+                    <a class="nav-link" href="{{route('municipios.index')}}">Municipalities</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('comunas.index')}}">Departments</a>
+                    <a class="nav-link" href="{{route('departamentos.index')}}">Departments</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('comunas.index')}}">Countries</a>
