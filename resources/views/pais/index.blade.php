@@ -5,7 +5,7 @@
 @section('content')
 
 <h1>Country List</h1>
-<a href="{{ route('paises.create')}}" class="btn btn-success">Add</a>
+<a href="{{ route('paises.create')}}" class="btn btn-success mb-3">Add</a>
 <table class="table">
     <thead>
     <tr>
@@ -22,6 +22,7 @@
                 <td>{{ $pais->pais_nomb }}</td>
                 <td>{{ $pais->muni_nomb }}</td>
                 <td>
+                    <a href="{{ route('paises.edit', ['pais' => $pais->pais_codi])}}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('paises.destroy', ['pais' => $pais->pais_codi])}}" method="POST" style="display: inline-block">
                         @method('delete')
                         @csrf

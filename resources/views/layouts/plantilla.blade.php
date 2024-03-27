@@ -18,7 +18,7 @@
     {{-- TAILWIND --}}
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
-    <title>Personas-App || @yield('title')</title>
+    <title>@yield('title')</title>
 </head>
 <body>
     @include('layouts.partials.navbar')

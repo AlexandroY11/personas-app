@@ -5,7 +5,7 @@
 @section('content')
 
 <h1>Municipality List</h1>
-<a href="{{ route('municipios.create')}}" class="btn btn-success">Add</a>
+<a href="{{ route('municipios.create')}}" class="btn btn-success mb-3">Add</a>
 <table class="table">
     <thead>
     <tr>

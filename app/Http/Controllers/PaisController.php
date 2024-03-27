@@ -58,17 +58,30 @@ class PaisController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pais $pais)
     {
-        //
+
+        // dd($pais);
+
+        $municipios = DB::table('tb_municipio')
+            ->orderBy('muni_nomb')
+            ->get();
+        return view('pais.edit', compact('pais'), compact('municipios'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Pais $pais)
     {
-        //
+        $pais->update($request->all());
+
+        $paises = DB::table('tb_pais')
+            ->join('tb_municipio', 'tb_pais.pais_capi', '=', 'tb_municipio.muni_codi')
+            ->select('tb_pais.*', "tb_municipio.muni_nomb")
+            ->get();
+
+        return view('pais.index', compact('paises'));
     }
 
     /**
