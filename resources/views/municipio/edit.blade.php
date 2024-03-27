@@ -1,10 +1,10 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Add Comuna')
+@section('title', 'Edit Municipio')
 
 @section('content')
 
-<h1>Edit Commune {{$municipio->muni_nomb}}</h1>
+<h1>Edit Municipality {{$municipio->muni_nomb}}</h1>
 
 <form action="{{ route('municipios.update', ['municipio' => $municipio->muni_codi]) }}" method="POST">
     @method('put')

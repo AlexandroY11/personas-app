@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Add Comuna')
+@section('title', 'Edit Comuna')
 
 @section('content')
 
