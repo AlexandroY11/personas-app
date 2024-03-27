@@ -20,7 +20,7 @@
                     <a class="nav-link" href="{{route('departamentos.index')}}">Departments</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('comunas.index')}}">Countries</a>
+                    <a class="nav-link" href="{{route('paises.index')}}">Countries</a>
                 </li>
             </ul>
         </div>
